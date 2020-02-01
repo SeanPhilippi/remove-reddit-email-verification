@@ -9,23 +9,12 @@
 //Adapted from Hide Reddit Side Bar script by u/pm_all_ahri_art
 // ==/UserScript==
 const hideEmailVerification = () => {
-  console.log("i'm firing")
-  var verify_email = document.getElementsByClassName("_3GEY4V1vCvw8HqDBo4DyQW");
-  if (verify_email) {
-      verify_email[0].fireEvent('onclick');
-  }
-  setTimeout(hideEmailVerification, 2000);
-}
-
-hideEmailVerification();
-
-/*GM_addStyle ( `
-// @grant        GM_addStyle
-    .redesign-beta-optin {
-        width: 0px;
-        visibility: hidden;
-        padding: 0px;
+    const verify_email = document.getElementsByClassName("_12Ewyh01Y1cMPB3Ri_F1C4");
+    if (verify_email) {
+        verify_email[0].setAttribute('style', 'display: none;');
     }
-` );*/
+  }
 
-// look into https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/dispatchEvent
+  window.setInterval(function(){
+    hideEmailVerification();
+  }, 5000);
