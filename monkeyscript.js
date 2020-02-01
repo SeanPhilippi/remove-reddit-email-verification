@@ -12,7 +12,7 @@ const hideEmailVerification = () => {
   console.log("i'm firing")
   var verify_email = document.getElementsByClassName("_3GEY4V1vCvw8HqDBo4DyQW");
   if (verify_email) {
-      verify_email[0].fireEvent('onclick');
+      verify_email[0].setAttribute('style', 'display: hidden;');
   }
   setTimeout(hideEmailVerification, 2000);
 }
